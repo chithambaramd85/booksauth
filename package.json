@@ -18,6 +18,8 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "angular-cli-ghpages": "^1.0.0",
+    "angular-cli-github-pages": "^0.2.0",
     "bootstrap": "^5.1.3",
     "firebase": "^9.6.8",
     "git": "^0.1.5",

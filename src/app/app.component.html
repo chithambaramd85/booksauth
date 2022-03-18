@@ -30,8 +30,8 @@
               <a class="nav-link" routerLinkActive="active" [skipLocationChange]="true"  routerLink="contactme">Contact Me</a>
             </li>
 
-
-            <li class="nav-item" *ngIf="!authService.isAuthenticated()">
+            <!-- *ngIf="!authService.isAuthenticated()" -->
+            <li class="nav-item" >
               <a class="nav-link" routerLinkActive="active"  routerLink="book">Books</a>
             </li>
 
@@ -39,7 +39,7 @@
               <a class="nav-link" routerLinkActive="active" (click)="onLogout()"  routerLink="book">LogOut</a>
             </li> -->
 
-        <ng-template [ngIf]="!authService.isAuthenticated()">
+        <!-- <ng-template [ngIf]="!authService.isAuthenticated()"> -->
             
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active"   routerLink="login">Login</a>
@@ -49,7 +49,7 @@
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active"  routerLink="register">Register</a>
             </li>
-          </ng-template>
+          <!-- </ng-template> -->
 
            
           </ul>

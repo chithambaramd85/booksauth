@@ -22,4 +22,31 @@
              <button type="submit" class="btn btn-primary" (click)="onRegister()" [disabled]="!registerForm.valid">Register</button>
 </form><br>
 
-Ref: <p>https://console.firebase.google.com/project/vaphttp-a7f9e/authentication/users</p>
+Ref: <p>https://console.firebase.google.com/project/vaphttp-a7f9e/authentication/users</p><br><br>
+
+
+<h6>1. Git Commands- Build & Deploy</h6>
+
+  <h6>Steps:</h6>
+  1. Upload/Commit to Github: (in vscode terminal)<br>
+  git init<br>
+  git add .<br>
+  git commit -m "my first commit"<br>
+  git branch -M main<br>
+  git remote add origin https://github.com/[user-name]/[repo-name].git<br>
+  git push -u origin main<br><br>
+
+    <h6>2. Build: (in vscode terminal)</h6>
+  npm install -g angular-cli-ghpages<br>
+  ng build --prod --base-href "https://[user-name].github.io/[repo-name]/"<br>
+
+  (or)<br>
+
+  Angular 12 - new build<br>
+
+
+ng deploy --base-href=https://chithambaramd85.github.io/booksauth/ --name=chithambaramd85 --email=chithambaramd85@gmail.com<br>
+
+Deploy:<br>
+npx ngh --dir=dist/foldename-new<br><br>
+
