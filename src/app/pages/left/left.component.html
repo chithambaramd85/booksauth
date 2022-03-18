@@ -1,0 +1,19 @@
+<h3>Menu</h3><br><br>
+
+Counter : {{counter}}
+
+<button class="btn btn-warning" (click)="Increase()">Increase</button><br><br>
+
+<div *ngFor="let student of studentchild">
+    <tr>
+      
+        <td>
+            
+            {{student.name}} 
+        </td>
+    </tr>
+  
+
+</div><br><br>
+
+<button class="btn btn-warning" (click)="generateNumber()">Fire Event</button>

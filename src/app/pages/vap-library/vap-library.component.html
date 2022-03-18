@@ -1,0 +1,19 @@
+<h2 class="title">VAP Library</h2>
+<p>Random number from Child Component: {{randomNumber || 'Not yet generated'}}</p>
+<div class="container">
+  <div class="row">
+<div class="col-md-3 columnPan">
+  <app-left [studentchild]="studentParent" (numberGenerated1)="onNumberGenerated($event)"></app-left>
+</div>
+
+<div class="col-md-6 columnPan">
+  <app-middle></app-middle>
+</div>
+
+<div class="col-md-3 columnPan">
+  <app-right></app-right>
+</div>
+
+  </div>
+
+</div>

@@ -1,0 +1,87 @@
+<h3>Template Driven Form  (TDF)</h3><br>
+
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+
+              <div class="form-group">
+                <label>First Name</label>
+                  <input type="text" class="form-control" name="firstname" ngModel placeholder="First name" required>
+                </div><br>
+
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lastname" ngModel placeholder="Last name">
+                 </div><br>
+
+                 <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email" ngModel placeholder="Email" required email #email="ngModel">
+                    <span *ngIf="!email.valid && email.touched" class="txtcolor">Please enter your name</span>
+                 </div><br>
+
+                 <div class="form-group">
+                     <label>Gender</label><br>
+                     <input type="radio" name="gender" value="Male" ngModel>Male &nbsp;&nbsp;
+                     <input type="radio" name="gender" value="Female" ngModel>Female &nbsp;&nbsp;
+                    
+                 </div><br>
+
+                 <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="married" ngModel id="inlineCheckbox1" value="option1">
+                        <label class="form-check-label" for="inlineCheckbox1">Married</label>
+                      </div>
+
+                 </div>
+                 <button type="submit" class="btn btn-success" (click)="setDefaultValue()">SetValue</button><br><br>
+
+          </div>
+          <div class="col-md-6" ngModelGroup="address">
+
+              <div class="form-group" >
+                <label>Country</label>
+                <select class="form-select form-select-sm"  name="country" [ngModel]="'India'">
+                    <option *ngFor="let c of countryList">{{c.countryName}}</option>
+                </select>
+             </div><br>
+
+             <div class="form-group">
+                <label>City</label>
+                  <input type="text" class="form-control" name="city" ngModel placeholder="City">
+                </div><br>
+
+                <div class="form-group">
+                    <label>Street</label>
+                      <input type="text" class="form-control" name="street" ngModel placeholder="street">
+                    </div><br>
+
+                    <div class="form-group">
+                        <label>Pincode</label>
+                          <input type="text" class="form-control" name="pincode" ngModel placeholder="pincode">
+                        </div><br>
+                        <button type="submit" class="btn btn-primary"  [disabled] ="!userForm.value">Submit</button>
+          </div>
+        
+        </div>
+
+
+        <div class="row">
+          <div class="row col-sm-5">
+            <pre>{{userForm.value | json}}</pre>
+
+          </div>
+          <div class="col-sm-2"></div>
+
+          <div class="row col-sm-5">
+            <pre>Valid : {{userForm.valid}}</pre>
+            <pre>Touched : {{userForm.touched}}</pre>
+            <pre>Dirty : {{userForm.dirty}}</pre>
+            <pre>Submitted : {{userForm.submitted}}</pre>
+
+          </div>
+
+        </div>
+      </form>
+
+  

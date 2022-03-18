@@ -1,0 +1,25 @@
+<h3>Register</h3><br>
+
+<form [formGroup]="registerForm">
+    <div class="row">
+      <div class="col-md-6">
+
+          <div class="form-group">
+            <label>Email</label>
+              <input type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+             <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched" class="txtcolor">Enter email Only!!!</span>
+
+            </div><br>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" class="form-control" name="password" formControlName="password" placeholder="password">
+                <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched" class="txtcolor">Enter your password!!!</span>
+             </div><br>
+             </div>
+             </div>
+
+             <button type="submit" class="btn btn-primary" (click)="onRegister()" [disabled]="!registerForm.valid">Register</button>
+</form><br>
+
+Ref: <p>https://console.firebase.google.com/project/vaphttp-a7f9e/authentication/users</p>

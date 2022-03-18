@@ -1,0 +1,10 @@
+<h3>Book Details</h3><br>
+
+<input type="text" [(ngModel)]="bookName"><br><br>
+
+<p>{{'VAP'}} Book Id: {{bookId}}</p><br>
+<p>Book Name: {{bookName}}</p><br>
+<p>Author: {{author}}</p><br>
+<p>Book Status: {{bookStatus}}</p>
+
+<button class="btn btn-success" [disabled]="btnToogle" (click)="Toggle()">Toggle</button>

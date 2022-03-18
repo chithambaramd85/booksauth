@@ -1,0 +1,14 @@
+.navlstyle {
+    text-decoration: line-through;
+    color:red;
+}
+
+.avlstyle {
+    text-decoration: none;
+    color:green;
+    font-weight: bold;
+}
+.npstyle {
+    text-decoration: line-through;
+    color:blue;
+}

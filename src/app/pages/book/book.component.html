@@ -1,0 +1,56 @@
+<h3>Books</h3><br>
+
+<form  [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+    <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+
+          <div class="form-group">
+            <label>Book Id</label>
+              <input type="text" class="form-control" name="bookid" formControlName="bookid" placeholder="Book Id">
+            
+            </div><br>
+
+            <div class="form-group">
+                <label>Book Name</label>
+                <input type="text" class="form-control" name="bookname" formControlName="bookname" placeholder="Book Name">
+             </div><br>
+
+             <div class="form-group">
+                <label>Author</label>
+                <input type="text" class="form-control" name="author" formControlName="author" placeholder="Author">
+            
+             </div><br>
+
+             <button type="submit" class="btn btn-primary"  [disabled]="!bookForm.valid" (click)="onPushBook()">Push Book</button>&nbsp;&nbsp;
+             <button type="submit" class="btn btn-success"  [disabled]="!bookForm.valid" (click)="onSave()">Save Book</button>&nbsp;&nbsp;
+             <button type="submit" class="btn btn-info"  [disabled]="!bookForm.valid" (click)="onGet()">Get Book</button>
+<br><br>
+      </div>
+      <div class="col-md-6"></div>
+    
+    </div>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>BookId</th>
+      <th>Book Name</th>
+      <th>Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of myBooks">
+      <td>{{book.bookid}}</td>
+      <td>{{book.bookname}}</td>
+      <td>{{book.author}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+  </form><br>
+
+  

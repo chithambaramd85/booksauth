@@ -1,0 +1,41 @@
+<h3>Checkout</h3>
+
+<div *ngIf="books; then userbook; else nouserbook">Book Varable</div>
+
+{{289 | sqrt}}
+
+<ng-template #userbook>
+
+    <div *ngFor="let obj of books; index as i; even as e; odd as o; first as f; last as l">
+
+        <div [ngSwitch]="obj.bookstatus">
+
+            <!-- <div *ngSwitchCase="'Available'" [ngStyle]="{'color':'green'}">
+                {{i}} - {{obj.bookname}}
+            </div>
+
+
+            <div *ngSwitchCase="'Not Available'" [ngStyle]="{'text-decoration' : 'line-through'}">
+                {{i}} -  {{obj.bookname}}
+            </div> -->
+
+            <div [ngClass]="{'navlstyle':obj.bookstatus == 'Not Available', 'avlstyle' : obj.bookstatus == 'Available',
+              'npstyle' : obj.bookstatus  == 'Not Printing'}">
+                {{i}} - {{obj.bookname | shorten:10}}
+            </div>
+
+
+            <!-- <div *ngSwitchDefault>
+                Default -  {{obj.bookname}}
+            </div> -->
+
+        </div>
+      
+
+    </div>
+   
+</ng-template>
+
+<ng-template #nouserbook>
+    No Book
+</ng-template>
